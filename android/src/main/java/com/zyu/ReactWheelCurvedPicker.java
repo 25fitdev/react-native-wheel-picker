@@ -66,8 +66,11 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
             LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right/2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
             paint.setShader(linearGradientShader);
         }
-        canvas.drawLine(rectCurItem.left, rectCurItem.top, rectCurItem.right, rectCurItem.top, paint);
-        canvas.drawLine(rectCurItem.left, rectCurItem.bottom, rectCurItem.right, rectCurItem.bottom, paint);
+        paint.setAlpha(50);
+        canvas.drawRoundRect(rectCurItem.left, rectCurItem.top, rectCurItem.right, rectCurItem.bottom, 15,15,paint);
+
+//        canvas.drawLine(rectCurItem.left, rectCurItem.top, rectCurItem.right, rectCurItem.top, paint);
+//        canvas.drawLine(rectCurItem.left, rectCurItem.bottom, rectCurItem.right, rectCurItem.bottom, paint);
     }
 
     public void setLineColor(Integer color) {
